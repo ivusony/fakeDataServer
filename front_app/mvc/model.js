@@ -1,9 +1,11 @@
-function model(){
+function model(url){
 
 
     var request = new XMLHttpRequest();
     
-    request.open('GET', 'http://localhost:3000/xmlData', true);
+    //'http://localhost:3000/xmlData'
+
+    request.open('GET', url, true);
 
     request.onload = function(data){
         console.log(request.responseText);

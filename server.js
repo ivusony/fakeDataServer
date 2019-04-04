@@ -12,7 +12,7 @@ const   express     = require('express'),
 
 
         app.get('/', function(req, res, next){
-            res.sendFile(__dirname + '/index.html');
+            res.sendFile(__dirname + '/front_app/index.html');
         })
 
         app.get('/comments', function(req, res, next){

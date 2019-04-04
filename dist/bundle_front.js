@@ -104,7 +104,7 @@ eval("const ctrl = __webpack_require__(/*! ../front_app/mvc/controller */ \"./fr
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const model = __webpack_require__(/*! ./model */ \"./front_app/mvc/model.js\");\r\n\r\nfunction controller(){\r\n    var btn = document.querySelector('#test_btn');\r\n\r\n    btn.addEventListener('click', function(e){\r\n        console.log('works');\r\n        model();\r\n    })\r\n\r\n}\r\n\r\nmodule.exports = controller;\n\n//# sourceURL=webpack:///./front_app/mvc/controller.js?");
+eval("const model = __webpack_require__(/*! ./model */ \"./front_app/mvc/model.js\");\r\n\r\nfunction controller(){\r\n    var btn = document.querySelector('#test_btn'),\r\n        input = document.querySelector('#test_input');\r\n\r\n    btn.addEventListener('click', function(e){\r\n        console.log('works');\r\n        model(input.value);\r\n    })\r\n\r\n}\r\n\r\nmodule.exports = controller;\n\n//# sourceURL=webpack:///./front_app/mvc/controller.js?");
 
 /***/ }),
 
@@ -115,7 +115,7 @@ eval("const model = __webpack_require__(/*! ./model */ \"./front_app/mvc/model.j
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("function model(){\r\n\r\n\r\n    var request = new XMLHttpRequest();\r\n    \r\n    request.open('GET', 'http://localhost:3000/xmlData', true);\r\n\r\n    request.onload = function(data){\r\n        console.log(request.responseText);\r\n        console.log(\"================================================\");\r\n        console.log(request.responseType);\r\n        console.log(\"================================================\");\r\n        console.log(request.responseXML);\r\n\r\n        // var parser = new DOMParser();\r\n        // var xmlDoc = parser.parseFromString(request.responseText,\"text/xml\");\r\n\r\n        // console.log(xmlDoc);\r\n\r\n        \r\n    }\r\n\r\n    request.onerror = function(error){\r\n        console.log('Something went wrong');\r\n        console.log(error);\r\n    }\r\n\r\n    request.send();\r\n}\r\n\r\nmodule.exports = model;\n\n//# sourceURL=webpack:///./front_app/mvc/model.js?");
+eval("function model(url){\r\n\r\n\r\n    var request = new XMLHttpRequest();\r\n    \r\n    //'http://localhost:3000/xmlData'\r\n\r\n    request.open('GET', url, true);\r\n\r\n    request.onload = function(data){\r\n        console.log(request.responseText);\r\n        console.log(\"================================================\");\r\n        console.log(request.responseType);\r\n        console.log(\"================================================\");\r\n        console.log(request.responseXML);\r\n\r\n        // var parser = new DOMParser();\r\n        // var xmlDoc = parser.parseFromString(request.responseText,\"text/xml\");\r\n\r\n        // console.log(xmlDoc);\r\n\r\n        \r\n    }\r\n\r\n    request.onerror = function(error){\r\n        console.log('Something went wrong');\r\n        console.log(error);\r\n    }\r\n\r\n    request.send();\r\n}\r\n\r\nmodule.exports = model;\n\n//# sourceURL=webpack:///./front_app/mvc/model.js?");
 
 /***/ })
 
